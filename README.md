@@ -29,11 +29,15 @@ ros2 run comm_node comm_node
 ```
 pip install -r requirement.txt
 ```
-有些包需要上开源社区找资源，例如pytorch。  
+有些包需要上开源社区找资源。 
+列举两个本工程需要额外找的包：  
 **安装pytorch请不要使用**  
 ```
 pip install torch torchvision
 ```
-请前往Nvidia官网Pytorch for jetson 寻找对应版本。torchvision根据torch版本选择, Instructions一栏有版本对应关系。
-> https://forums.developer.nvidia.com/t/pytorch-for-jetson/72048
-
+请前往Nvidia官网Pytorch for jetson 寻找对应版本。torchvision根据torch版本选择, Instructions一栏有版本对应关系。  
+[pytorch-for-jetson]  
+(https://forums.developer.nvidia.com/t/pytorch-for-jetson/72048)  
+yolov5 的依赖 MediaPipe也不能直接安装。教程在这里：  
+[MediaPipe Python on aarch64 Ubuntu 20.04]  
+（https://github.com/jiuqiant/mediapipe_python_aarch64）
