@@ -11,34 +11,20 @@
 wget http://fishros.com/install -O fishros && . fishros
 ```
 [鱼香ros机器人]  (https://fishros.com/d2lros2/#/)   
-
-安装好后ros2会默认在base环境下运行，如果想在虚拟环境下运行，请按以下步骤来：  
-第一步，   
-在setup.cfg里加上这两行：
-```
-[build_scripts]
-executable = /home/jetson/miniconda3/envs/py3.8/bin/python
-```
-第二步，  
-在你写的ros2的包里引用base环境下安装的rclpy等包:
-```
-import sys
-sys.path.append('/opt/ros/foxy/lib/python3.8/site-packages/rclpy')
-import rclpy
-```
-记得将路径改为你自己的路径。  
-
+### 在base环境下运行ros2：
 下载源码后先编译：  
 ```
 cd /comm_ws
 colcon build
 ```
+在comm_ws文件夹下执行下列指令
 然后运行autoaim_data 和 comm_node 两个包：
 ```
-source install.setup.bash
+source install/setup.bash
 ros2 run autoaim_data autoaim_data
 ```
 新开一个终端：
+进到comm_ws文件夹
 ```
 source install.setup.bash
 ros2 run comm_node comm_node
